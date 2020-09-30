@@ -29,6 +29,7 @@ add_compile_options(/permissive-)
 
 find_package(Magnum REQUIRED GL SceneGraph MeshTools Primitives)
 find_package(DART 6.0.0 CONFIG REQUIRED)
+find_package(fcl CONFIG REQUIRED)
 
 if(BUILD_STATIC)
     set(MAGNUM_DARTINTEGRATION_BUILD_STATIC 1)
