@@ -23,7 +23,9 @@
 #   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #   DEALINGS IN THE SOFTWARE.
 #
-
+# use everything we have...
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
+add_compile_options(/permissive-)
 
 find_package(Magnum REQUIRED GL SceneGraph MeshTools Primitives)
 find_package(DART 6.0.0 CONFIG REQUIRED)
@@ -35,11 +37,6 @@ endif()
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/configure.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/configure.h)
 
-if(MSVC)
-    # use everything we have...
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
-    add_compile_options(/permissive-)
-endif()
 
 set(MagnumDartIntegration_SRCS
     ConvertShapeNode.cpp
