@@ -47,9 +47,7 @@ set(MagnumDartIntegration_HEADERS
 
     visibility.h)
 
-if(MSVC)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
-endif()
+
 
 # DartIntegration library
 add_library(MagnumDartIntegration ${SHARED_OR_STATIC}
@@ -58,6 +56,7 @@ add_library(MagnumDartIntegration ${SHARED_OR_STATIC}
 target_include_directories(MagnumDartIntegration PUBLIC
     ${PROJECT_SOURCE_DIR}/src
     ${PROJECT_BINARY_DIR}/src)
+add_compile_options("/permissive-")
 set_target_properties(MagnumDartIntegration PROPERTIES
     DEBUG_POSTFIX "-d"
     FOLDER "Magnum/DartIntegration")
