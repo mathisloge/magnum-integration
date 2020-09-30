@@ -23,6 +23,8 @@
 #   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #   DEALINGS IN THE SOFTWARE.
 #
+# todo add mscv
+add_compile_options(/permissive-)
 
 find_package(Magnum REQUIRED GL SceneGraph MeshTools Primitives)
 find_package(DART 6.0.0 CONFIG REQUIRED)
@@ -56,8 +58,7 @@ add_library(MagnumDartIntegration ${SHARED_OR_STATIC}
 target_include_directories(MagnumDartIntegration PUBLIC
     ${PROJECT_SOURCE_DIR}/src
     ${PROJECT_BINARY_DIR}/src)
-# todo add mscv
-add_compile_options(/permissive-)
+
 set_target_properties(MagnumDartIntegration PROPERTIES
     DEBUG_POSTFIX "-d"
     FOLDER "Magnum/DartIntegration")
