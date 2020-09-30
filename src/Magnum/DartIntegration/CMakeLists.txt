@@ -47,6 +47,10 @@ set(MagnumDartIntegration_HEADERS
 
     visibility.h)
 
+if(MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
+endif()
+
 # DartIntegration library
 add_library(MagnumDartIntegration ${SHARED_OR_STATIC}
     ${MagnumDartIntegration_SRCS}
