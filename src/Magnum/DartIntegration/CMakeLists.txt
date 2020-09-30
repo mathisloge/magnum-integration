@@ -75,7 +75,8 @@ target_link_libraries(MagnumDartIntegration
     Magnum::SceneGraph
     Magnum::Primitives
     Magnum::MeshTools
-    dart)
+    dart
+    fcl)
 
 install(TARGETS MagnumDartIntegration
     RUNTIME DESTINATION ${MAGNUM_BINARY_INSTALL_DIR}
