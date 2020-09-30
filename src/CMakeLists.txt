@@ -39,6 +39,9 @@ if(CORRADE_TARGET_WINDOWS)
     add_definitions("-DUNICODE" "-D_UNICODE")
 endif()
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
+add_compile_options(/permissive-)
+
 add_subdirectory(Magnum)
 add_subdirectory(MagnumExternal)
 
